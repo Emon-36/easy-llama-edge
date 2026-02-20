@@ -42,32 +42,36 @@ chmod +x run_llama3.2.sh
 chmod +x run_qwen2.5.sh
 ./run_llama3.2.sh
 ./run_qwen2.5.sh
+```
+---
 
 
-
-##2. Manual Setup Instructions
+## 2. Manual Setup Instructions
 If you prefer to run things manually:
 
-###A. Install Toolchains
+### A. Install Toolchains
 ```bash
 sudo apt update && sudo apt install -y build-essential clang git cmake
-
-###B.Configure Swapfile(Mandatory)
+```
+---
+### B. Configure Swapfile(Mandatory)
 ```bash
 sudo fallocate -l 4G /swapfile
 sudo chmod 600 /swapfile
 sudo mkswap /swapfile
 sudo swapon /swapfile
+```
+---
 
-###Build With Clang
+### Build With Clang
 ```bash
 mkdir build && cd build
 cmake .. -DCMAKE_C_COMPILER=clang -DCMAKE_CXX_COMPILER=clang++
 cmake --build . --config Release -j$(nproc)
 cd ..
+```
 
-
-##Model Execution
+## Model Execution
 
 Place your .gguf model files in the model/ directory, then use the following scripts:
 
@@ -77,14 +81,19 @@ For Llama 3.2 (1B): ./run_llama3.2.sh (High accuracy)
 
 
 
-##Performance Matrix
+## Performance Matrix
+
 Device,RAM,Model,Quant,Tokens/Sec
+
 TV Box (H313),1GB,Qwen 2.5 0.5B,Q4_K_M,4.2 - 5.5
+
 TV Box (H313),1GB,Llama 3.2 1B,Q4_K_M,1.8 - 2.5
 
 
-##Contact and Colab
+## Contact and Colab
+
 Feel free to reach out for collaborations in Edge AI, Embedded Systems, or Power Electronics.
 
 Lead Engineer: Md. Shahariar Khan Emon
+
 Email: emon23702036@gmail.com
