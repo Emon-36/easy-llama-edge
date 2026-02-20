@@ -31,6 +31,20 @@ The pipeline ensures that the CPU can handle the weights even when the physical 
 
 ---
 
+## Prequisite(do this must)
+```bash
+sudo apt install git
+git clone https://github.com/Emon-36/easy-llama-edge.git
+cd easy-llama-edge
+mkdir model
+cd model
+wget https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct-GGUF/resolve/main/qwen2.5-0.5b-instruct-q4_k_m.gguf
+wget https://huggingface.co/bartowski/Llama-3.2-1B-Instruct-GGUF/resolve/main/Llama-3.2-1B-Instruct-Q4_K_M.gguf
+mv qwen2.5-0.5b-instruct-q4_k_m.gguf qwen.gguf
+mv Llama-3.2-1B-Instruct-Q4_K_M.gguf llama.gguf
+```
+---
+
 ## ⚙️ Automated Setup (One-Click)
 
 I have created a comprehensive bash script to handle everything from installation to compilation.
